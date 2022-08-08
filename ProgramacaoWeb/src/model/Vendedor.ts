@@ -1,4 +1,4 @@
-import { ObjectId } from "mongoose";
+import { ObjectId, Schema } from "mongoose";
 
 export interface Vendedor{
 
@@ -8,3 +8,10 @@ export interface Vendedor{
     salario: number;
 }
 
+
+const CarrinhoSchema: Schema = new Schema({
+    idVendedor: {type: Schema.Types.ObjectId, required: true, unique: true},
+    quantidade: { type: Number, required: true},
+
+    
+})
