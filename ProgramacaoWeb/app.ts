@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import { ServerApiVersion } from 'mongodb';
-import routes from '../src/routes';
+import routes from 'express';
 
 class App {
 public express: express.Application;

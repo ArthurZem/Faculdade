@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import hotelController from './controller/hotel';
+import hotelController from '.src/controllers/hotel';
 import quartoController from './controller/quarto';
 import telefoneController from './controller/telefone';
 import enderecoController from './controller/endereco';
