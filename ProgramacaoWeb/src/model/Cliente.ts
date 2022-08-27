@@ -1,12 +1,12 @@
 import { ObjectId , Schema} from "mongoose";
 
-export interface Produtos{
+export interface Cliente{
 
     idProduto: ObjectId,
     nome: string,
-    tamanho: number,
-    valor: number,
-    cor: string;
+    categoria: string,
+    preco: number,
+    quantidade: number;
 }
 
 const ProdutosSchema: Schema = new Schema({
