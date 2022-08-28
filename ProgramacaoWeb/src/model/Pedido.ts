@@ -8,12 +8,6 @@ export interface Pedido{
     nomeCliente: Cliente,
     nomeGarcom: Garcom;
     mesa: Number;
+    numeroPedido: number;
 }
 
-const UsuarioSchema: Schema = new Schema({
-    idUsuario: {type: Schema.Types.ObjectId, required: true, unique: true},
-    nomeCliente: { type: String, required: true},
-    nomeGarcom: { type: String, required: true},
-    mesa: { type: Number, required: true, unique: true}
-    
-})

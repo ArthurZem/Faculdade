@@ -7,9 +7,3 @@ export interface Garcom{
     salario: number;
 }
 
-const RelatioSchema: Schema = new Schema({
-    idGarcom: {type: Schema.Types.ObjectId, required: true, unique: true},
-    nome: { type: String, required: true},
-    salario: { type: Number, required: true},
-
-})
