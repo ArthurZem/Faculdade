@@ -6,3 +6,5 @@ const GarcomSchema: Schema = new Schema({
     salario: { type: Number, required: true},
 
 })
+
+export default GarcomSchema;

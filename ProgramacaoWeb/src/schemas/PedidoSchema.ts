@@ -7,3 +7,5 @@ const PedidoSchema: Schema = new Schema({
     mesa: { type: Number, required: true, unique: true},
     numeroPedido: {type: Number, required: true}
 })
+
+export default PedidoSchema;

@@ -6,3 +6,5 @@ const ClienteSchema: Schema = new Schema({
     nome: { type: String, required: true},
     
 })
+
+export default ClienteSchema;

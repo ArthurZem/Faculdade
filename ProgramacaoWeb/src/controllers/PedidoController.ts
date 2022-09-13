@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 
 //import Atendimento from '../schemas/atendimento_schema';
 
-const atendimento_schema = require('../schemas/atendimento_schema');
+import PedidoSchema from '../schemas/PedidoSchema';
 
 class AtendimentoController {
     public async index(req: Request, res: Response): Promise<Response> {

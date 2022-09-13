@@ -1,17 +1,19 @@
 import { Request, Response } from 'express';
 
-//import Atendimento from '../schemas/atendimento_schema';
+//import Atendimento from '../schemas/Garcom_Schema';
 
-const atendimento_schema = require('../schemas/atendimento_schema');
+import GarcomSchema from '../schemas/GarcomSchema';
+
+const Garcom_Schema = require('../schemas/Garcom_Schema');
 
 class AtendimentoController {
     public async index(req: Request, res: Response): Promise<Response> {
-        const atendimentos = await atendimento_schema.find();
+        const atendimentos = await Garcom_Schema.find();
         return res.json(atendimentos);
     }
 
     public async getAll(req: Request, res: Response): Promise<void> {
-        await atendimento_schema.find((err: any, atendimentos: any) => {
+        await Garcom_Schema.find((err: any, atendimentos: any) => {
             if (err) {
                 res.send(err)
             } else {
@@ -22,7 +24,7 @@ class AtendimentoController {
 
     public async get(req: Request, res: Response): Promise<void> {
         const id = req.params.id
-        await atendimento_schema.findById(id, (err: any, atendimento: any) => {
+        await Garcom_Schema.findById(id, (err: any, atendimento: any) => {
             if (err) {
                 res.send(err);
             } else {
@@ -32,7 +34,7 @@ class AtendimentoController {
     }
 
     public async add(req: Request, res: Response): Promise<void> {
-        let atendimento = new atendimento_schema(req.body);
+        let atendimento = new Garcom_Schema(req.body);
         await atendimento.save((err: any) => {
             if (err) {
                 res.send(err)
@@ -43,7 +45,7 @@ class AtendimentoController {
     }
 
     public async delete(req: Request, res: Response): Promise<void> {
-        await atendimento_schema.deleteOne({ _id: req.params.id }, (err: any) => {
+        await Garcom_Schema.deleteOne({ _id: req.params.id }, (err: any) => {
             if (err) {
                 res.send(err)
             } else {
@@ -54,7 +56,7 @@ class AtendimentoController {
 
     public async update(req: Request, res: Response): Promise<void> {
         const id = req.params.id
-        await atendimento_schema.findByIdAndUpdate(id, req.body, (err: any, atendimento: any) => {
+        await Garcom_Schema.findByIdAndUpdate(id, req.body, (err: any, atendimento: any) => {
             if (err) {
                 res.send(err);
             } else {
@@ -66,7 +68,7 @@ class AtendimentoController {
 
 
     public async store(req: Request, res: Response): Promise<Response> {
-        const atendimento = await atendimento_schema.create(req.body);
+        const atendimento = await Garcom_Schema.create(req.body);
         return res.json(atendimento);
     }
 }
