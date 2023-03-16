@@ -1,10 +1,9 @@
 import {ObjectId, Schema} from 'mongoose';
 
-interface Cardapio{
+export interface Cardapio{
 
     idCardapio: ObjectId,
     preco: number,
     descricao: String;
 }
 
-export {Cardapio}
